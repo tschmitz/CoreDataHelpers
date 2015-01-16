@@ -10,6 +10,7 @@
 		22AE84AF1A6982A200A349A0 /* CoreDataHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = 22AE84AE1A6982A200A349A0 /* CoreDataHelpers.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22AE84B51A6982A200A349A0 /* CoreDataHelpers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22AE84A91A6982A200A349A0 /* CoreDataHelpers.framework */; };
 		22AE84BC1A6982A200A349A0 /* CoreDataHelpersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AE84BB1A6982A200A349A0 /* CoreDataHelpersTests.swift */; };
+		22AE84C61A6982B500A349A0 /* CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AE84C51A6982B500A349A0 /* CoreDataHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		22AE84B41A6982A200A349A0 /* CoreDataHelpersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreDataHelpersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22AE84BA1A6982A200A349A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22AE84BB1A6982A200A349A0 /* CoreDataHelpersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelpersTests.swift; sourceTree = "<group>"; };
+		22AE84C51A6982B500A349A0 /* CoreDataHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			children = (
 				22AE84AE1A6982A200A349A0 /* CoreDataHelpers.h */,
 				22AE84AC1A6982A200A349A0 /* Supporting Files */,
+				22AE84C51A6982B500A349A0 /* CoreDataHelpers.swift */,
 			);
 			path = CoreDataHelpers;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22AE84C61A6982B500A349A0 /* CoreDataHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +323,7 @@
 		22AE84C01A6982A200A349A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -328,12 +333,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		22AE84C11A6982A200A349A0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
