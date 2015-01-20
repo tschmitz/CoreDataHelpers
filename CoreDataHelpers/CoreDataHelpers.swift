@@ -10,9 +10,11 @@ import Foundation
 import CoreData
 
 public extension NSManagedObjectContext {
-	public func entitiesMatchingPredicate(predicate: NSPredicate, entityName: String) -> [NSManagedObject] {
+	public func entitiesMatchingPredicate(predicate: NSPredicate?, entityName: String) -> [NSManagedObject] {
 		let fetchRequest = NSFetchRequest(entityName: entityName)
-		fetchRequest.predicate = predicate
+		if let predicate = predicate {
+			fetchRequest.predicate = predicate
+		}
 		
 		var error: NSError?
 		if let results = self.executeFetchRequest(fetchRequest, error: &error) as? [NSManagedObject] {
