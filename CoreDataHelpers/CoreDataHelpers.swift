@@ -10,6 +10,18 @@ import Foundation
 import CoreData
 
 public extension NSManagedObjectContext {
+	public func entitiesMatchingPredicate(predicate: NSPredicate, entityName: String) -> [NSManagedObject] {
+		let fetchRequest = NSFetchRequest(entityName: entityName)
+		fetchRequest.predicate = predicate
+		
+		var error: NSError?
+		if let results = self.executeFetchRequest(fetchRequest, error: &error) as? [NSManagedObject] {
+			return results
+		} else {
+			return []
+		}
+	}
+	
 	public func findFirstOfEntity(entityName: String, predicate: NSPredicate) -> NSManagedObject? {
 		let fetchRequest = NSFetchRequest(entityName: entityName)
 		fetchRequest.fetchLimit = 1
